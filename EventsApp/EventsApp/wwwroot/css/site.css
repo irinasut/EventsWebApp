@@ -16,3 +16,32 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.general-header {
+    color: #333333;
+}
+
+.general-content {
+    color: #5A5A5A;
+}
+
+.event-container {
+    padding-bottom: 35px;
+}
+
+.event-title {
+    padding-bottom: 10px;
+}
+
+.event-description {
+    font-weight: bold;
+    font-size: 15px;
+    color: lightslategray;
+}
+
+a.btn,
+button.btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    background-color: darkslategray;
+}

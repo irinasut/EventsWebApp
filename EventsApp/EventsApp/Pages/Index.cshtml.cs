@@ -1,20 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using EventsApp.Data;
+using EventsApp.Models;
 
 namespace EventsApp.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly EventsContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(EventsContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
+        public List<Events> Events { get; set; }
+        public async Task OnGetAsync()
         {
-
+            Events = await _context.Events.ToListAsync();
         }
     }
 }

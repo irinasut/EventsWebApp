@@ -1,7 +1,14 @@
-var builder = WebApplication.CreateBuilder(args);
+using EventsApp.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("EventsContext");
 // Add services to the container.
 builder.Services.AddRazorPages();
+// Add a database service
+builder.Services.AddDbContext<EventsContext>(
+    options => options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
