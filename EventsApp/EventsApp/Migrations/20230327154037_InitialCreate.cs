@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,7 +14,7 @@ namespace EventsApp.Migrations
                 name: "Events",
                 columns: table => new
                 {
-                    ID = table.Column<string>(type: "TEXT", nullable: false)
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
@@ -32,28 +31,28 @@ namespace EventsApp.Migrations
                 name: "Participants",
                 columns: table => new
                 {
-                    ID = table.Column<string>(type: "TEXT", nullable: false)
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
                     EmailAddress = table.Column<string>(type: "TEXT", nullable: false),
-                    EventID = table.Column<string>(type: "TEXT", nullable: false)
+                    EventId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Participants", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Participants_Events_EventID",
-                        column: x => x.EventID,
+                        name: "FK_Participants_Events_EventId",
+                        column: x => x.EventId,
                         principalTable: "Events",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Participants_EventID",
+                name: "IX_Participants_EventId",
                 table: "Participants",
-                column: "EventID");
+                column: "EventId");
         }
 
         /// <inheritdoc />

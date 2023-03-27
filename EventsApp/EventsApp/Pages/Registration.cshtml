@@ -1,5 +1,32 @@
-﻿@page
+﻿@page "{id}"
 @model RegistrationModel
 @{
     ViewData["Title"] = "Registration";
 }
+
+<div class="row">
+    <div class="col">
+        <h1 class=text-center>Registration Form</h1>
+        <hr>
+        <form method="post">
+            <input type="visible" asp-for="Participant.EventId" value="@ViewContext.RouteData.Values["id"]" />
+            <div class="form-group">
+                <label for="Title">Name</label>
+                <input type="text" class="form-control" asp-for="Participant.Name" required />
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="Tel">Phone Number</label>
+                <input type="tel" class="form-control" asp-for="Participant.PhoneNumber" placeholder="+491234567890" minlength="9" maxlength="14" required />
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="Body">Email Address</label>
+                <input type="email" class="form-control" asp-for="Participant.EmailAddress" size="30" placeholder="dummy@gmail.com" required />
+            </div>
+            <br>
+            <button type="submit" class="btn text-white" id="submit">Submit</button>
+        </form>
+    </div>
+</div>
+

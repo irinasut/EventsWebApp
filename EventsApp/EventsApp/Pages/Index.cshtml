@@ -35,10 +35,10 @@
             </p>
 
             <div class="col-1 pl-1 pr-1 text-center" id="button-col">
-                <a asp-page="/Registration" asp-route-name=@System.Web.HttpUtility.UrlPathEncode(@eventDb.Name) class="btn text-white">Register</a>
+                <a asp-page="/Registration" asp-route-id="@eventDb.ID" class="btn text-white">Register</a>
             </div>
         </div>
-
+       
          <br>
     }
 </div>
