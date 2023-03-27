@@ -3,4 +3,36 @@
 @{
 }
 
-<h1>Hellloooo USEEEER!</h1>
+@{
+    ViewData["Title"] = "User's Page";
+}
+
+<div class="jumbotron p-3 d-flex align-items-center">
+    <h1 class= "display-4 text-center">
+        Upcoming Events
+    </h1>
+    <a class="btn btn-primary btn-sm">
+        Create
+    </a>
+</div>
+
+<div class="d-flex bg-primary text-white">
+    <div class="p-2" style="flex:0 0 50%">
+        Event
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Registrations
+    </div>
+</div>
+
+<@foreach(var q in @Model.Queries)
+{
+    <div class="d-flex border-left border-right border-bottom border-primary">
+        <div class="p-2" style="flex:0 0 50%">
+            @q.Name;
+        </div>
+        <div class="p-2" style="flex:1 0 auto">
+            @q.Count;
+        </div>
+    </div>
+}

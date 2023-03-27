@@ -34,7 +34,7 @@ namespace EventsApp.Pages
 
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
 
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Account/Index");
 
            }
 

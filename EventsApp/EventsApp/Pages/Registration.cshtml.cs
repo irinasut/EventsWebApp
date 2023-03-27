@@ -23,11 +23,10 @@ namespace EventsApp.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            /*if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
-            }*/
-            //var id = Participant.EventId;
+            }
 
             await _context.Participants.AddAsync(Participant);
 
