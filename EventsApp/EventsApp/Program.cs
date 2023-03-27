@@ -9,6 +9,12 @@ builder.Services.AddRazorPages();
 // Add a database service
 builder.Services.AddDbContext<EventsContext>(
     options => options.UseSqlite(connectionString));
+// add an authentication service
+builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
+{
+    options.Cookie.Name = "MyCookieAuth";
+    options.LoginPath = "/Account/Login";
+});
 
 var app = builder.Build();
 
@@ -25,6 +31,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// middlware
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
