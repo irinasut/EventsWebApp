@@ -2,8 +2,13 @@ using EventsApp.Data;
 using EventsApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
+
+/*
+ * Registration Page of the Event Web Application. 
+ * Allows participants to register for a specific event. 
+ * Stores the participant's data in the database (Participant table). 
+ * Redirects the participant to the Home Page after submitting the information. 
+ */
 
 namespace EventsApp.Pages
 {
@@ -33,11 +38,6 @@ namespace EventsApp.Pages
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
-        }
-
-
-        public void OnGet()
-        {
         }
     }
 }

@@ -4,6 +4,12 @@ using EventsApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
+/*
+ * Secured Create Page for an authenticated user. 
+ * Allows user to create new events, saves the event information in the database.
+ * Redirects user to the home page for autheticated users. 
+ */
+
 namespace EventsApp.Pages.Account
 {
     [Authorize]
@@ -18,10 +24,6 @@ namespace EventsApp.Pages.Account
 
         [BindProperty]
         public Events Event { get; set; }
-
-        public void OnGet()
-        {
-        }
 
         public async Task<IActionResult> OnPostAsync()
         {

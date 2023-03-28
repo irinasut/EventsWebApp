@@ -1,6 +1,6 @@
 using EventsApp.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("EventsContext");
@@ -9,7 +9,7 @@ builder.Services.AddRazorPages();
 // Add a database service
 builder.Services.AddDbContext<EventsContext>(
     options => options.UseSqlite(connectionString));
-// add an authentication service
+// Add an authentication service
 builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
 {
     options.Cookie.Name = "MyCookieAuth";
@@ -22,7 +22,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -31,7 +30,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// middlware
+// Middlware
 app.UseAuthentication();
 app.UseAuthorization();
 

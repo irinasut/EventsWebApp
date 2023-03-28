@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using EventsApp.Data;
 using EventsApp.Models;
-using Microsoft.AspNetCore.Components.Forms;
+
+/*
+ * Home page of the Event Web Application. 
+ * Connects to the database and displays all upcoming events for participants to register. 
+ */
 
 namespace EventsApp.Pages
 {

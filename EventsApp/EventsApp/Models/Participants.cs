@@ -9,8 +9,8 @@ namespace EventsApp.Models
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
 
-        public int EventId { get; set; }
         [ForeignKey("EventId")]
-        public virtual Events Event { get; set; }   
+        public Events? Event { get; set; }
+        public int EventId { get; set; }
     }
 }

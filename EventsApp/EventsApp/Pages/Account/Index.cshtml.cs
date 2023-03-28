@@ -1,12 +1,14 @@
 using EventsApp.Data;
 using EventsApp.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
-using System.Linq;
+
+/*
+ * Home Page for an authenticated user. 
+ * Makes a query to the database to retrieve an amount of registred participnts for each event.
+ * Allows to create new events by leading to the Create Page. 
+ */
 
 namespace EventsApp.Pages.Account
 {
@@ -69,7 +71,7 @@ namespace EventsApp.Pages.Account
         }
     }
 
-
+    // object for mapping the query results into.
     public class EventParticipantsData
     {
         public string Name { get; set; }

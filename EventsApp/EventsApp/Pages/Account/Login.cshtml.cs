@@ -1,9 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using EventsApp.Data;
 using EventsApp.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+
+/*
+ * Login Page of the Event Web Application. 
+ * Allows the admin user only (prototype simpler version) to enter the credentials to login.
+ * Creates an authentication cookie for the user.
+ * Redirects admin user to the secured Index Page, that allows him to create new events and see registration for all upcoming events. 
+ */
 
 namespace EventsApp.Pages
 {
@@ -11,10 +17,6 @@ namespace EventsApp.Pages
     {
         [BindProperty]
         public Users User { get; set; }
-
-        public void OnGet()
-        {
-        }
 
         public async Task<IActionResult> OnPostAsync()
         {
