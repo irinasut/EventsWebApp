@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\github\\EventsWebApp\\EventsApp\\EventsApp\\wwwroot\\images\\homeimg.jpg",
+      "PackagePath": "staticwebassets\\images\\homeimg.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\github\\EventsWebApp\\EventsApp\\EventsApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FA1RIFo1vNiR847S7TtEBHQhppvbNhr1Zr4/4FBl0D0=",
+  "Hash": "Ncx8Am1q7FabhmsLWAHsbyv6SOggxc7uWRdoiX2XIgs=",
   "Source": "EventsApp",
   "BasePath": "_content/EventsApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\github\\EventsWebApp\\EventsApp\\EventsApp\\wwwroot\\images\\homeimg.jpg",
+      "SourceId": "EventsApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\github\\EventsWebApp\\EventsApp\\EventsApp\\wwwroot\\",
+      "BasePath": "_content/EventsApp",
+      "RelativePath": "images/homeimg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\homeimg.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\github\\EventsWebApp\\EventsApp\\EventsApp\\wwwroot\\js\\site.js",
