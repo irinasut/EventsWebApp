@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using EventsApp.Data;
 using EventsApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EventsApp.Pages.Account
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly EventsContext _context;

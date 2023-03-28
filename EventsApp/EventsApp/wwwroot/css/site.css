@@ -45,3 +45,7 @@ button.btn {
     font-weight: 400;
     background-color: darkslategray;
 }
+
+button.logout {
+    background-color: white;
+}
