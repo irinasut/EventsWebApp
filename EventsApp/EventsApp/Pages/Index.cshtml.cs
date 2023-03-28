@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using EventsApp.Data;
 using EventsApp.Models;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace EventsApp.Pages
 {

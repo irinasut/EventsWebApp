@@ -5,11 +5,11 @@
 }
 
 <div class="row">
-    <div class="col">
-        <h1 class="display-4 text-center">Log in</h1>
+    <div class="col-5 mx-auto">
+        <h1 class="display-4 text-center">Registration form</h1>
         <hr>
         <form method="post">
-            <input type="visible" asp-for="Participant.EventId" value="@ViewContext.RouteData.Values["id"]" />
+            <input type="hidden" asp-for="Participant.EventId" value="@ViewContext.RouteData.Values["id"]" />
             <div class="form-group">
                 <label for="Title">Name</label>
                 <input type="text" class="form-control" asp-for="Participant.Name" required />

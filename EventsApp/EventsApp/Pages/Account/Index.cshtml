@@ -1,38 +1,38 @@
 ﻿@page
 @model EventsApp.Pages.Account.IndexModel
-@{
-}
 
 @{
     ViewData["Title"] = "User's Page";
 }
 
-<div class="jumbotron p-3 d-flex align-items-center">
-    <h1 class= "display-4 text-center">
-        Upcoming Events
-    </h1>
-    <a class="btn btn-primary btn-sm">
-        Create
-    </a>
-</div>
+<div class="container col-6 mx-auto">
+    <h1 class="display-4 text-center">Upcoming Events</h1>
+    <br><br>
 
-<div class="d-flex bg-primary text-white">
-    <div class="p-2" style="flex:0 0 50%">
-        Event
-    </div>
-    <div class="p-2" style="flex:1 0 auto">
-        Registrations
-    </div>
-</div>
-
-<@foreach(var q in @Model.Queries)
-{
-    <div class="d-flex border-left border-right border-bottom border-primary">
+    <div class="d-flex bg-primary text-white">
         <div class="p-2" style="flex:0 0 50%">
-            @q.Name;
+            Event
         </div>
         <div class="p-2" style="flex:1 0 auto">
-            @q.Count;
+            Registrations
         </div>
     </div>
-}
+
+    @foreach (var data in @Model.EventParticipants)
+    {
+        <div class="d-flex border-left border-right border-bottom border-primary">
+            <div class="p-2" style="flex:0 0 50%">
+                @data.Name
+            </div>
+            <div class="p-2" style="flex:1 0 auto">
+                @data.Count
+            </div>
+        </div>
+
+    }
+    <br>
+    <div class="col-2 pl-1 pr-1 text-center mx-auto">
+        <a asp-page="/Account/Create" class="btn text-white">Create</a>
+    </div>
+
+</div>

@@ -21,33 +21,32 @@ namespace EventsApp.Pages.Account
         }
         public List<Events> Events { get; set; }
 
-        public List<Query> Queries { get; set; }
+        public List<EventParticipantsData> EventParticipants { get; set; }
 
         public async Task OnGetAsync()
         {
             Events = await _context.Events.ToListAsync();
-            Queries = new List<Query>();
+            EventParticipants = new List<EventParticipantsData>();
 
-            var EventParticipants = (from pa in _context.Participants
-                         join ev in _context.Events
-                         on pa.EventId equals ev.ID group new {ev, pa} by new { ev.Name } into newgroup
+            var queryCount = (from ev in _context.Events
+                         join pa in _context.Participants
+                         on ev.ID equals pa.EventId group new {ev, pa} by new { ev.Name } into newgroup
                          select new
                          {
                              EventName = newgroup.Key.Name, 
                              Count = newgroup.Count()
                          }).ToList();
-            foreach (var elem in EventParticipants)
+             foreach (var elem in queryCount)
             {
-                Query q = new Query();
+                EventParticipantsData q = new EventParticipantsData();
                 q.Name = elem.EventName;
                 q.Count = elem.Count;
-                Queries.Add(q);
+                EventParticipants.Add(q);
             }
-            Console.WriteLine(Queries);
         }
 
     }
-    public class Query
+    public class EventParticipantsData
     {
         public string Name { get; set; }
         public int Count { get; set; }

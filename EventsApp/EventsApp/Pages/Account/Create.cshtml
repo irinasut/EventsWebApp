@@ -1,0 +1,40 @@
+﻿@page
+@model EventsApp.Pages.Account.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h1 class="display-4 text-center">Add new event</h1>
+        <hr>
+        <form method="post">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" asp-for="Event.Name" required />
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea type="text" class="form-control" asp-for="Event.Description" rows="4" required></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" class="form-control" asp-for="Event.Location" required />
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Start Time</label>
+                <input type="text" class="form-control" asp-for="Event.StartTime" required />
+            </div>
+            <br>
+            <div class="form-group">
+                <label>End Time</label>
+                <input type="text" class="form-control" asp-for="Event.EndTime" required />
+            </div>
+            <br>
+            <button type="submit" class="btn text-white" id="submit">Submit</button>
+        </form>
+    </div>
+</div>
