@@ -7,8 +7,6 @@
 
         public Users()
         {
-            UserName = "dummy";
-            UserPassword = "dumdum";
         }
           
     }
